@@ -1,5 +1,21 @@
+import { useState, useEffect } from 'react';
+import { saveScore, isHighScore } from '../utils/leaderboard';
+import NameInputModal from './NameInputModal';
+import Leaderboard from './Leaderboard';
+
 const GameResults = ({ score, totalQuestions, onRestart }) => {
+  const [showNameInput, setShowNameInput] = useState(false);
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
+  const [scoreSubmitted, setScoreSubmitted] = useState(false);
+  
   const percentage = Math.round((score / totalQuestions) * 100);
+  
+  // Check if this is a high score
+  useEffect(() => {
+    if (isHighScore(percentage) && !scoreSubmitted) {
+      setShowNameInput(true);
+    }
+  }, [percentage, scoreSubmitted]);
   
   // Simple performance message
   const getMessage = () => {
@@ -10,6 +26,25 @@ const GameResults = ({ score, totalQuestions, onRestart }) => {
   };
 
   const message = getMessage();
+
+  // Handle saving high score
+  const handleSaveScore = (playerName) => {
+    const scoreData = {
+      playerName,
+      score,
+      totalQuestions,
+      percentage
+    };
+    
+    saveScore(scoreData);
+    setShowNameInput(false);
+    setScoreSubmitted(true);
+  };
+
+  const handleSkipSave = () => {
+    setShowNameInput(false);
+    setScoreSubmitted(true);
+  };
 
   return (
     <div className="text-center space-y-6">
@@ -40,13 +75,43 @@ const GameResults = ({ score, totalQuestions, onRestart }) => {
         </div>
       </div>
       
-      {/* Play Again Button */}
-      <button 
-        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
-        onClick={onRestart}
-      >
-        Play Again
-      </button>
+      {/* Action Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <button 
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+          onClick={onRestart}
+        >
+          Play Again
+        </button>
+        <button 
+          className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200"
+          onClick={() => setShowLeaderboard(true)}
+        >
+          🏆 Leaderboard
+        </button>
+      </div>
+
+      {/* High Score Badge */}
+      {scoreSubmitted && isHighScore(percentage) && (
+        <div className="mt-4 p-3 bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-300 rounded-lg text-center">
+          <span className="text-yellow-700 font-semibold">🎉 New High Score! 🎉</span>
+        </div>
+      )}
+
+      {/* Modals */}
+      {showNameInput && (
+        <NameInputModal
+          score={score}
+          totalQuestions={totalQuestions}
+          percentage={percentage}
+          onSave={handleSaveScore}
+          onSkip={handleSkipSave}
+        />
+      )}
+
+      {showLeaderboard && (
+        <Leaderboard onClose={() => setShowLeaderboard(false)} />
+      )}
     </div>
   );
 };
