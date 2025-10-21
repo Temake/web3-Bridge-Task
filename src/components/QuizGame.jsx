@@ -25,7 +25,7 @@ const QuizGame = () => {
       setError(null);
       
       // Import questions from our JSON file
-      const response = await fetch('/src/data/questions.json');
+      const response = await fetch('/data/questions.json');
       
       if (!response.ok) {
         throw new Error(`Failed to load questions: ${response.status}`);

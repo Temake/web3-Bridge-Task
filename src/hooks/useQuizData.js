@@ -7,7 +7,7 @@ import { validateQuestion } from '../utils/quizUtils';
  * @param {Object} options - Loading options
  * @returns {Object} - Loading state and data
  */
-export const useQuizData = (source = '/src/data/questions.json', options = {}) => {
+export const useQuizData = (source = '/data/questions.json', options = {}) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

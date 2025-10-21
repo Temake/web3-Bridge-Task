@@ -164,7 +164,7 @@ npm run preview
 ## 🛠️ Customization
 
 ### Adding New Questions
-1. Edit `src/data/questions.json`
+1. Edit `public/data/questions.json`
 2. Follow the existing format:
 ```json
 {
@@ -188,7 +188,7 @@ npm run preview
 ### Common Issues
 
 **Questions not loading?**
-- Check if `questions.json` file exists in `src/data/`
+- Check if `questions.json` file exists in `public/data/`
 - Ensure JSON format is valid
 - Check browser console for errors
 

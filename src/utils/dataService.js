@@ -127,9 +127,9 @@ export const quizDataService = new QuizDataService();
  */
 export const DATA_SOURCES = {
   LOCAL: {
-    GENERAL: '/src/data/questions.json',
-    SCIENCE: '/src/data/science-questions.json',
-    HISTORY: '/src/data/history-questions.json'
+    GENERAL: '/data/questions.json',
+    SCIENCE: '/data/science-questions.json',
+    HISTORY: '/data/history-questions.json'
   },
   API: {
     TRIVIA_DB: 'https://opentdb.com/api.php',
