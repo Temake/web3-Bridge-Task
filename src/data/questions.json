@@ -1,0 +1,144 @@
+{
+  "categories": {
+    "general": {
+      "name": "General Knowledge",
+      "questions": [
+        {
+          "id": 1,
+          "text": "What is the capital of France?",
+          "options": ["London", "Berlin", "Paris", "Madrid"],
+          "correctAnswer": 2,
+          "difficulty": "easy",
+          "category": "geography"
+        },
+        {
+          "id": 2,
+          "text": "Which planet is known as the Red Planet?",
+          "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+          "correctAnswer": 1,
+          "difficulty": "easy",
+          "category": "science"
+        },
+        {
+          "id": 3,
+          "text": "Who painted the Mona Lisa?",
+          "options": ["Van Gogh", "Picasso", "Leonardo da Vinci", "Michelangelo"],
+          "correctAnswer": 2,
+          "difficulty": "medium",
+          "category": "art"
+        },
+        {
+          "id": 4,
+          "text": "What is the largest mammal in the world?",
+          "options": ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+          "correctAnswer": 1,
+          "difficulty": "easy",
+          "category": "nature"
+        },
+        {
+          "id": 5,
+          "text": "In which year did World War II end?",
+          "options": ["1943", "1944", "1945", "1946"],
+          "correctAnswer": 2,
+          "difficulty": "medium",
+          "category": "history"
+        }
+      ]
+    },
+    "science": {
+      "name": "Science & Technology",
+      "questions": [
+        {
+          "id": 6,
+          "text": "What is the chemical symbol for gold?",
+          "options": ["Go", "Gd", "Au", "Ag"],
+          "correctAnswer": 2,
+          "difficulty": "medium",
+          "category": "chemistry"
+        },
+        {
+          "id": 7,
+          "text": "How many bones are in the human body?",
+          "options": ["186", "206", "226", "246"],
+          "correctAnswer": 1,
+          "difficulty": "hard",
+          "category": "biology"
+        },
+        {
+          "id": 8,
+          "text": "What does CPU stand for?",
+          "options": ["Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computer Program Unit"],
+          "correctAnswer": 0,
+          "difficulty": "easy",
+          "category": "technology"
+        },
+        {
+          "id": 9,
+          "text": "What is the speed of light in vacuum?",
+          "options": ["299,792,458 m/s", "300,000,000 m/s", "299,000,000 m/s", "298,792,458 m/s"],
+          "correctAnswer": 0,
+          "difficulty": "hard",
+          "category": "physics"
+        },
+        {
+          "id": 10,
+          "text": "Which programming language was created by Guido van Rossum?",
+          "options": ["Java", "Python", "JavaScript", "C++"],
+          "correctAnswer": 1,
+          "difficulty": "medium",
+          "category": "technology"
+        }
+      ]
+    },
+    "history": {
+      "name": "World History",
+      "questions": [
+        {
+          "id": 11,
+          "text": "Who was the first person to walk on the moon?",
+          "options": ["Buzz Aldrin", "Neil Armstrong", "John Glenn", "Alan Shepard"],
+          "correctAnswer": 1,
+          "difficulty": "easy",
+          "category": "space"
+        },
+        {
+          "id": 12,
+          "text": "In which year did the Berlin Wall fall?",
+          "options": ["1987", "1988", "1989", "1990"],
+          "correctAnswer": 2,
+          "difficulty": "medium",
+          "category": "modern_history"
+        },
+        {
+          "id": 13,
+          "text": "Which ancient wonder of the world was located in Alexandria?",
+          "options": ["Hanging Gardens", "Lighthouse of Alexandria", "Colossus of Rhodes", "Temple of Artemis"],
+          "correctAnswer": 1,
+          "difficulty": "hard",
+          "category": "ancient_history"
+        },
+        {
+          "id": 14,
+          "text": "Who wrote 'The Art of War'?",
+          "options": ["Confucius", "Sun Tzu", "Lao Tzu", "Mencius"],
+          "correctAnswer": 1,
+          "difficulty": "medium",
+          "category": "literature"
+        },
+        {
+          "id": 15,
+          "text": "Which empire was ruled by Julius Caesar?",
+          "options": ["Greek Empire", "Roman Empire", "Persian Empire", "Byzantine Empire"],
+          "correctAnswer": 1,
+          "difficulty": "easy",
+          "category": "ancient_history"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2025-10-21",
+    "totalQuestions": 15
+  }
+}
