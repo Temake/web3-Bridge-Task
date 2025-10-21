@@ -23,11 +23,11 @@ const Question = ({ question, onAnswer, selectedAnswer, showFeedback }) => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-6 leading-relaxed">
+      <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6 leading-relaxed text-center sm:text-left">
         {question.text}
       </h2>
       
-      <div className="grid gap-4">
+      <div className="grid gap-3 sm:gap-4">
         {question.options.map((option, index) => (
           <button
             key={index}
@@ -36,9 +36,9 @@ const Question = ({ question, onAnswer, selectedAnswer, showFeedback }) => {
             disabled={showFeedback}
           >
             <div className="flex items-center justify-between">
-              <span className="text-lg">{option}</span>
+              <span className="text-base sm:text-lg flex-1 pr-2">{option}</span>
               {showFeedback && (
-                <span className="text-2xl">
+                <span className="text-xl sm:text-2xl flex-shrink-0">
                   {index === question.correctAnswer ? '✅' : 
                    index === selectedAnswer ? '❌' : ''}
                 </span>
@@ -52,12 +52,15 @@ const Question = ({ question, onAnswer, selectedAnswer, showFeedback }) => {
       {showFeedback && (
         <div className="mt-6 p-4 rounded-lg text-center">
           {selectedAnswer === question.correctAnswer ? (
-            <div className="text-green-600 font-semibold text-lg">
+            <div className="text-green-600 font-semibold text-base sm:text-lg">
               🎉 Correct! Well done!
             </div>
           ) : (
-            <div className="text-red-600 font-semibold text-lg">
-              😞 Sorry, that's incorrect. The correct answer is: {question.options[question.correctAnswer]}
+            <div className="text-red-600 font-semibold text-sm sm:text-base">
+              😞 Sorry, that's incorrect. <br className="sm:hidden" />
+              <span className="block sm:inline mt-1 sm:mt-0">
+                The correct answer is: <strong>{question.options[question.correctAnswer]}</strong>
+              </span>
             </div>
           )}
         </div>
