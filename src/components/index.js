@@ -4,3 +4,4 @@ export { default as Question } from './Question';
 export { default as GameResults } from './GameResults';
 export { default as LoadingSpinner } from './LoadingSpinner';
 export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as StartScreen } from './StartScreen';
